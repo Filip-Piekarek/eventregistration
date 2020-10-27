@@ -2,9 +2,9 @@ package ca.mcgill.ecse321.eventregistration.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import RegistrationManager;
+//import RegistrationManager;
 import javax.persistence.ManyToOne;
-import Registration;
+//import Registration;
 import java.util.Set;
 import javax.persistence.OneToMany;
 

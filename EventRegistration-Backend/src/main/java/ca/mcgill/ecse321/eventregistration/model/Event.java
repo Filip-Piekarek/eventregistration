@@ -1,8 +1,12 @@
+package ca.mcgill.ecse321.eventregistration.model;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
 import java.sql.Time;
 import javax.persistence.ManyToOne;
+import java.util.Set;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Event{
@@ -50,15 +54,15 @@ public Time getEndTime() {
       this.registrationManager = registrationManager;
    }
    
-   private RegistrationManager registrationManager;
+   private Set<Registration> registration;
    
-   @ManyToOne(optional=false)
-   public RegistrationManager getRegistrationManager() {
-      return this.registrationManager;
+   @OneToMany(mappedBy="event" )
+   public Set<Registration> getRegistration() {
+      return this.registration;
    }
    
-   public void setRegistrationManager(RegistrationManager registrationManager) {
-      this.registrationManager = registrationManager;
+   public void setRegistration(Set<Registration> registrations) {
+      this.registration = registrations;
    }
    
    }

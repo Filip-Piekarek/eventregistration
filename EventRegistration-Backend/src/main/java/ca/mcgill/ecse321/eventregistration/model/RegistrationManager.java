@@ -1,3 +1,5 @@
+package ca.mcgill.ecse321.eventregistration.model;
+
 import javax.persistence.Entity;
 import ca.mcgill.ecse321.eventregistration.model.Person;
 import java.util.Set;
@@ -29,17 +31,6 @@ public class RegistrationManager{
       this.events = eventss;
    }
    
-   private Set<Registration> registration;
-   
-   @OneToMany(mappedBy="registrationManager" )
-   public Set<Registration> getRegistration() {
-      return this.registration;
-   }
-   
-   public void setRegistration(Set<Registration> registrations) {
-      this.registration = registrations;
-   }
-   
    private Set<Registration> registrations;
    
    @OneToMany(mappedBy="registrationManager" , cascade={CascadeType.ALL})
@@ -49,17 +40,6 @@ public class RegistrationManager{
    
    public void setRegistrations(Set<Registration> registrationss) {
       this.registrations = registrationss;
-   }
-   
-   private Set<Event> registration;
-   
-   @OneToMany(mappedBy="registrationManager" )
-   public Set<Event> getRegistration() {
-      return this.registration;
-   }
-   
-   public void setRegistration(Set<Event> registrations) {
-      this.registration = registrations;
    }
    
    private int id;
